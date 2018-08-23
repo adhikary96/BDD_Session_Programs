@@ -50,11 +50,14 @@ public class LoginStepDefinitions {
 		
 		assertEquals(expected, actual);
 		//driver.close();
+		
+		driver.switchTo().alert().dismiss();
+		Thread.sleep(1000);
 	}
 	
 	@When("^User clicks on Login without entering password$")
 	public void user_clicks_on_Login_without_entering_password() throws Throwable {
-		driver.switchTo().alert().dismiss();
+		
 		login.setName("sgdtgd");
 		login.setPassword("");
 		login.clickLogin();
@@ -70,7 +73,10 @@ public class LoginStepDefinitions {
 		String actual=alert.getText();
 		
 		assertEquals(expected, actual);
-		driver.close();
+		//driver.close();
+		Thread.sleep(1000);
+		driver.switchTo().alert().dismiss();
+		
 	}
 
 	@When("^User enters valid username and password$")
@@ -89,7 +95,9 @@ public class LoginStepDefinitions {
 		String actual=alert.getText();
 		
 		assertEquals(expected, actual);
-		driver.close();
+		//driver.close();
+		Thread.sleep(1000);
+		driver.switchTo().alert().dismiss();
 	  
 	}
 
@@ -109,7 +117,9 @@ public class LoginStepDefinitions {
 		String actual=alert.getText();
 		
 		assertEquals(expected, actual);
-		driver.close();
+		//driver.close();
+		Thread.sleep(1000);
+		driver.switchTo().alert().dismiss();
 	}
 
 }
